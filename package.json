@@ -1,0 +1,22 @@
+{
+  "name": "@hexlet/code",
+  "version": "1.0.0",
+  "description": "[![Actions Status](https://github.com/hafalana/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/hafalana/frontend-project-46/actions)",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "bin": {
+    "gendiff": "./bin/gendiff.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/hafalana/frontend-project-46/issues"
+  },
+  "homepage": "https://github.com/hafalana/frontend-project-46#readme",
+  "dependencies": {
+    "commander": "^13.0.0"
+  }
+}
