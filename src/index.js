@@ -1,4 +1,9 @@
 import _ from 'lodash';
+import fs from 'fs';
+import path, { extname } from 'path';
+
+const getFileFormat = (filepath) => extname(filepath).slice(1);
+const getFileContent = (filepath) => fs.readFileSync(path.resolve(process.cwd(), filepath), 'utf-8');
 
 const genDiff = (data1, data2) => {
   const keys1 = Object.keys(data1);
@@ -22,4 +27,4 @@ const genDiff = (data1, data2) => {
   return `{\n${diff}\n}`;
 };
 
-export default genDiff;
+export { getFileFormat, getFileContent, genDiff };

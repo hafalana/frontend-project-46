@@ -5,5 +5,8 @@
 ### Coverage:
 [![Test Coverage](https://api.codeclimate.com/v1/badges/577aa1c1a6741d351da1/test_coverage)](https://codeclimate.com/github/hafalana/frontend-project-46/test_coverage)
 
-difference:
+difference JSON:
 https://asciinema.org/a/TDZh3s2BXxcMeJQuMOIePufNw
+
+difference YAML:
+https://asciinema.org/a/RWqeadrPAYVPQhBLLm1MyVaBi
