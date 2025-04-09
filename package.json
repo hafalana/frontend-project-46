@@ -1,7 +1,7 @@
 {
   "name": "@hexlet/code",
   "version": "1.0.0",
-  "description": "[![Actions Status](https://github.com/hafalana/frontend-project-46/actions/workflows/hexlet-check.yml/badge.svg)](https://github.com/hafalana/frontend-project-46/actions)",
+  "description": "Проект демонстрации",
   "main": "./bin/gendiff.mjs",
   "type": "module",
   "bin": {
@@ -9,8 +9,18 @@
   },
   "scripts": {
     "gendiff": "node ./bin/gendiff.mjs",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "jest",
+    "test:watch": "jest --watch",
+    "test:coverage": "jest --coverage",
+    "lint": "eslint ."
   },
+  "jest": {
+  "transform": {
+    "^.+\\.m?js$": "babel-jest"
+  },
+  "transformIgnorePatterns": ["/node_modules/"],
+  "moduleFileExtensions": ["js", "mjs"]
+},
   "repository": {
     "type": "git",
     "url": "git+https://github.com/hafalana/frontend-project-46.git"
@@ -25,5 +35,22 @@
     "commander": "^13.1.0",
     "lodash": "^4.17.21"
   },
-  "private": true
+  "private": true,
+  "devDependencies": {
+    "@babel/core": "^7.26.10",
+    "@babel/preset-env": "^7.26.9",
+    "@eslint/js": "^9.24.0",
+    "babel-jest": "^29.7.0",
+    "eslint": "^8.57.1",
+    "eslint-config-airbnb-base": "^15.0.0",
+    "eslint-config-prettier": "^10.1.1",
+    "eslint-plugin-import": "^2.31.0",
+    "eslint-plugin-jest": "^28.11.0",
+    "eslint-plugin-jsx-a11y": "^6.10.2",
+    "eslint-plugin-prettier": "^5.2.6",
+    "eslint-plugin-react": "^7.37.5",
+    "globals": "^16.0.0",
+    "jest": "^29.7.0",
+    "prettier": "^3.5.3"
+  }
 }
