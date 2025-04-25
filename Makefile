@@ -12,3 +12,6 @@ lint:
 
 test:
 	npx jest
+
+fix:
+	npx eslint . --fix

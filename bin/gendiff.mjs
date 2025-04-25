@@ -1,7 +1,7 @@
 #!/usr/bin/env node
 import { Command } from 'commander';
-import readFile from '../src/fileParse.js';
-import genDiff from '../src/index.js';
+import parseFile from '../src/parsers.js';
+import { getFileFormat, getFileContent, genDiff } from '../src/index.js';
 
 const program = new Command();
 
@@ -14,14 +14,15 @@ program
   .version('0.0.1');
 
 program.action((filepath1, filepath2) => {
-  try {
-    const fileData1 = readFile(filepath1);
-    const fileData2 = readFile(filepath2);
+  const fileData1 = getFileContent(filepath1);
+  const fileData2 = getFileContent(filepath2);
 
-    const difference = genDiff(fileData1, fileData2);
-    console.log(difference);
-  } catch (error) {
-    console.error(`Error reading files: ${error.message}`);
-  }
+  const parseFile1 = parseFile(fileData1, getFileFormat(filepath1));
+  const parseFile2 = parseFile(fileData2, getFileFormat(filepath2));
+
+  const difference = genDiff(parseFile1, parseFile2);
+
+  console.log(difference);
 });
+
 program.parse(process.argv);
